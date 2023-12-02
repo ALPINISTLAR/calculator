@@ -6,9 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const delButton = document.querySelector('.key--del');
     const equalButton = document.querySelector('.key--equal');
 
+    let calculated = false;
+
     function addButtonClickListener(button) {
         button.addEventListener('click', function () {
-            inputElement.value += button.dataset.key;
+            if (calculated) {
+                inputElement.value = button.dataset.key;
+                calculated = false;
+            } else {
+                inputElement.value += button.dataset.key;
+            }
         });
     }
 
@@ -16,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     operatorButtons.forEach(addButtonClickListener);
 
     resetButton.addEventListener('click', function () {
-        inputElement.value = "";
+        inputElement.value = '';
+        calculated = false;
     });
 
     delButton.addEventListener('click', function () {
@@ -32,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Natijani inputga yozish
             inputElement.value = result;
+            calculated = true;
         } catch (error) {
             // Xato bo'lganda
             inputElement.value = 'Error';
