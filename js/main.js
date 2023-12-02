@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
     numberButtons.forEach(addButtonClickListener);
     operatorButtons.forEach(addButtonClickListener);
 
+    resetButton.addEventListener('click', function () {
+        inputElement.value = "";
+    });
 
     delButton.addEventListener('click', function () {
         if (inputElement.value.length > 0) {
