@@ -468,11 +468,11 @@ select:-webkit-autofill:focus {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 64px);
   grid-template-areas:
-    "seven eight nine del"
-    "four five six add"
-    "one two three subtract"
-    "decimal zero divide multiply"
-    "reset reset equal equal";
+  "seven eight nine del"
+  "four five six add"
+  "one two three subtract"
+  "decimal zero divide multiply"
+  "reset reset equal equal";
   ;
   gap: 13px;
   padding: 24px;
